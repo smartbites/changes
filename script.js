@@ -26,7 +26,7 @@ function storeSelection(stepId, selectionData) {
   localStorage.setItem(stepId, JSON.stringify(selectionData));
 }
 
-// Load selections from local storage (if available)
+// Trigger the onchange event on page load to capture the initial selection
 function loadSelections() {
   const step1Data = JSON.parse(localStorage.getItem('step1')) || {};
   const step2Data = JSON.parse(localStorage.getItem('step2')) || {};
@@ -47,6 +47,11 @@ function loadSelections() {
   if (step3Data.balance) setBalance('step3', step3Data.balance);
   if (step3Data.flavour) setFlavour('step3', step3Data.flavour);
   if (step3Data.delivery) document.getElementById('delivery-input').value = step3Data.delivery;
+
+  // Trigger onchange event to ensure the default selection (if present) is handled
+  document.getElementById('flavours-step1').dispatchEvent(new Event('change'));
+  document.getElementById('flavours-step2').dispatchEvent(new Event('change'));
+  document.getElementById('flavours-step3').dispatchEvent(new Event('change'));
 }
 
 // Variables to track selections
