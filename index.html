@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changes Protocol</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Changes Protocol</h1>
+      <p>AI-Augmented Governance Framework</p>
+    </header>
+
+    <!-- Step Buttons -->
+    <div class="step-buttons">
+      <button class="step-button step1" id="btn-step1" onclick="openStep('step1-modal')">Step 1: Choices</button>
+      <button class="step-button step2" id="btn-step2" onclick="openStep('step2-modal')">Step 2: Preparation</button>
+      <button class="step-button step3" id="btn-step3" onclick="openStep('step3-modal')">Step 3: Delivery</button>
+    </div>
+
+    <!-- Modal for Step 1 -->
+    <div id="step1-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeStep('step1-modal')">&times;</span>
+        <h2>Step 1: Choices</h2>
+        <p>Select the foundational element of governance you wish to focus on. Use the flavour compass to identify potential issues within that focus.</p>
+
+        <!-- Governance Areas for Step 1 as Selection List -->
+        <p>Which Input State is most relevant to your current governance focus?</p>
+        <select id="input-state-step1">
+          <option value="Character">Character</option>
+          <option value="Intelligence">Intelligence</option>
+          <option value="Services">Services</option>
+          <option value="Community">Community</option>
+          <option value="Systems">Systems</option>
+        </select>
+
+        <!-- Personal Feedback Input for Step 1 -->
+        <div id="personal-input-step1">
+          <h3>Your Input</h3>
+          <textarea id="personal-feedback-step1" rows="4" placeholder="Describe any specific challenges related to this Input State..."></textarea>
+        </div>
+
+        <!-- Balance Scale -->
+        <div id="balance-scale-step1">
+          <h3>Balance Scale</h3>
+          <p>The Changes Balance Scale reflects how balanced this aspect of governance is. A score of 3 suggests optimal balance.</p>
+          <input type="range" min="1" max="5" id="balance-slider-step1">
+          <span id="balance-value-step1">3</span>
+        </div>
+
+        <!-- Flavours Compass -->
+        <div id="flavours-compass-step1">
+          <h3>Flavours Compass</h3>
+          <p>Which principle do you want to focus on to address potential issues?</p>
+          <select id="flavours-step1">
+            <option value="Freedom">Freedom</option>
+            <option value="Diversity">Diversity</option>
+            <option value="Inclusion">Inclusion</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Party">Party</option>
+            <option value="Wellbeing">Wellbeing</option>
+          </select>
+        </div>
+
+        <!-- Generate Prompt Button -->
+        <button class="generate-prompt" onclick="generatePrompt('step1')">Prompt Generation</button>
+
+        <!-- AI-Ready Prompt Output for Step 1 -->
+        <div class="prompt-output-container">
+          <div id="prompt-output-step1" class="prompt-output"></div>
+          <button class="copy-button" onclick="copyPrompt('prompt-output-step1')">Copy</button>
+          <span class="copy-success" id="copy-success-step1">Copied!</span>
+        </div>
+        
+        <!-- Next Step Button for Step 1 -->
+        <div class="step-save">
+          <button onclick="nextStep('step2-modal')">Next Step</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Step 2 -->
+    <div id="step2-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeStep('step2-modal')">&times;</span>
+        <h2>Step 2: Preparation</h2>
+        <p>Translate the insights from Step 1 into actionable governance strategies. What actions do you feel are necessary for improvement?</p>
+
+        <textarea id="preparation-input" rows="4" placeholder="Consider which strategies would best reflect the insights gathered..."></textarea>
+
+        <!-- Balance Scale -->
+        <div id="balance-scale-step2">
+          <h3>Balance Scale</h3>
+          <p>How aligned are your preparations with the principles you've set?</p>
+          <input type="range" min="1" max="5" id="balance-slider-step2">
+          <span id="balance-value-step2">3</span>
+        </div>
+
+        <!-- Flavours Compass -->
+        <div id="flavours-compass-step2">
+          <h3>Flavours Compass</h3>
+          <p>Which principle from the Flavours Compass do you want to focus on in your strategy?</p>
+          <select id="flavours-step2">
+            <option value="Freedom">Freedom</option>
+            <option value="Diversity">Diversity</option>
+            <option value="Inclusion">Inclusion</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Party">Party</option>
+            <option value="Wellbeing">Wellbeing</option>
+          </select>
+        </div>
+
+        <!-- Generate Prompt Button -->
+        <button class="generate-prompt" onclick="generatePrompt('step2')">Prompt Generation</button>
+
+        <!-- AI-Ready Prompt Output for Step 2 -->
+        <div class="prompt-output-container">
+          <div id="prompt-output-step2" class="prompt-output"></div>
+          <button class="copy-button" onclick="copyPrompt('prompt-output-step1')">Copy</button>
+          <span class="copy-success" id="copy-success-step1">Copied!</span>
+        </div>
+        
+        <!-- Next Step Button for Step 2 -->
+        <div class="step-save">
+          <button onclick="nextStep('step3-modal')">Next Step</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Step 3 -->
+    <div id="step3-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeStep('step3-modal')">&times;</span>
+        <h2>Step 3: Delivery</h2>
+        <p>This final phase focuses on refining and aligning governance outcomes. How will these changes manifest?</p>
+
+        <textarea id="delivery-input" rows="4" placeholder="Reflect on how your governance outcomes align..."></textarea>
+
+        <!-- Balance Scale -->
+        <div id="balance-scale-step3">
+          <h3>Balance Scale</h3>
+          <p>Are the outcomes aligned with your governance goals?</p>
+          <input type="range" min="1" max="5" id="balance-slider-step3">
+          <span id="balance-value-step3">3</span>
+        </div>
+
+        <!-- Flavours Compass -->
+        <div id="flavours-compass-step3">
+          <h3>Flavours Compass</h3>
+          <p>Which principle do you want to focus on in the final outcome?</p>
+          <select id="flavours-step3">
+            <option value="Freedom">Freedom</option>
+            <option value="Diversity">Diversity</option>
+            <option value="Inclusion">Inclusion</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Party">Party</option>
+            <option value="Wellbeing">Wellbeing</option>
+          </select>
+        </div>
+
+        <!-- Generate Prompt Button -->
+        <button class="generate-prompt" onclick="generatePrompt('step3')">Prompt Generation</button>
+
+        <!-- AI-Ready Prompt Output for Step 3 -->
+        <div class="prompt-output-container">
+          <div id="prompt-output-step3" class="prompt-output"></div>
+          <button class="copy-button" onclick="copyPrompt('prompt-output-step1')">Copy</button>
+          <span class="copy-success" id="copy-success-step1">Copied!</span>
+        </div>
+        
+        <!-- Finish Button for Step 3 (Return to Main) -->
+        <div class="step-save">
+          <button onclick="returnToMain()">Completion</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <button onclick="downloadProcess()">Text File</button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <div class="modal-overlay"></div>
+</body>
+</html>

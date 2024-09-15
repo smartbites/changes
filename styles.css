@@ -1,0 +1,311 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 30px;
+  padding: 20px;
+  background-color: #1E1E1E;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  background: linear-gradient(45deg, #00c6ff, #6a0dad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease-in-out infinite;
+}
+
+p {
+  color: #BBBBBB;
+  font-size: 1.2rem;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Step Buttons - Vertical Layout */
+.step-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.step-button {
+  border: none;
+  padding: 15px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 300px;
+  display: inline-block;
+  color: white;
+  text-transform: none;
+  background-color: #333;
+}
+
+.step1 {
+  color: #DABFFF; /* Light purple text */
+}
+
+.step2 {
+  color: #B3DFFF; /* Light blue text */
+}
+
+.step3 {
+  color: #C3FFC1; /* Light green text */
+}
+
+.step-button:hover {
+  filter: brightness(1.2);
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0;
+  border-radius: 10px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: #1E1E1E;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  position: relative;
+}
+
+.close {
+  color: #FFFFFF;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #FFD700;
+  cursor: pointer;
+}
+
+/* Text Areas and Inputs */
+textarea, select {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #333;
+  color: #FFF;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  resize: vertical;
+  box-sizing: border-box; /* Ensure padding is included within the element’s width */
+}
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 10px;
+}
+
+select {
+  padding: 10px;
+}
+
+/* Prompt Output Box */
+.prompt-output {
+  background-color: #007BFF; /* Light blue background */
+  color: #FFFFFF;
+  padding: 15px;
+  margin-top: 15px;
+  border: 3px solid #007BFF; /* Blue thick border */
+  border-radius: 8px;
+  font-style: italic;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Space below the prompt */
+.prompt-output + .step-save {
+  margin-top: 20px;
+}
+
+/* Generate Prompt Button */
+button.generate-prompt {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  width: 100%;
+}
+
+button.generate-prompt:hover {
+  background-color: #005bb5;
+}
+
+/* Next Step / Return Button */
+.step-save button {
+  background-color: #28a745;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.step-save button:hover {
+  background-color: #218838;
+}
+
+/* Footer Save Button */
+footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer button {
+  background-color: #28a745;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+footer button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .step-buttons {
+    flex-direction: column;
+  }
+
+  .step-button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+
+  textarea {
+    font-size: 1rem;
+  }
+}
+
+.copy-button {
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+  color: #FFF;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  position: relative;
+  display: inline-block;
+}
+
+.copy-button:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.prompt-output-container {
+  position: relative;
+  margin-bottom: 20px; /* Ensure there’s spacing around the prompt */
+}
+
+.copy-success {
+  color: #4caf50;
+  font-size: 0.9rem;
+  display: none; /* Initially hidden, will display when copy is successful */
+  margin-top: 5px;
+}
+
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark semi-transparent background */
+  z-index: 999; /* Lower z-index compared to the modal */
+  display: none; /* Hidden by default */
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: #FFF;
+  border-radius: 10px;
+  z-index: 1000; /* Ensure the modal is above the overlay */
+  display: none; /* Initially hidden */
+}
+
+.modal.show ~ .modal-overlay {
+  display: block; /* Display overlay when modal is shown */
+}
