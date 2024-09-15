@@ -235,3 +235,40 @@ function copyPrompt(promptId) {
     copySuccess.style.display = 'none';
   }, 2000); // Hide after 2 seconds
 }
+
+// Function to clear the form inputs, selections, and local storage
+function clearForm(stepId) {
+  // Clear inputs and selections for Step 1
+  if (stepId === "step1") {
+    document.getElementById('personal-feedback-step1').value = '';
+    document.getElementById('input-state-step1').value = '';
+    document.getElementById('balance-slider-step1').value = 3;
+    document.getElementById('balance-value-step1').innerText = 3;
+    document.getElementById('flavours-step1').value = ''; // Reset flavour selection
+  }
+
+  // Clear inputs and selections for Step 2
+  if (stepId === "step2") {
+    document.getElementById('preparation-input').value = '';
+    document.getElementById('balance-slider-step2').value = 3;
+    document.getElementById('balance-value-step2').innerText = 3;
+    document.getElementById('flavours-step2').value = ''; // Reset flavour selection
+  }
+
+  // Clear inputs and selections for Step 3
+  if (stepId === "step3") {
+    document.getElementById('delivery-input').value = '';
+    document.getElementById('balance-slider-step3').value = 3;
+    document.getElementById('balance-value-step3').innerText = 3;
+    document.getElementById('flavours-step3').value = ''; // Reset flavour selection
+  }
+
+  // Clear localStorage for the specific step
+  localStorage.removeItem(stepId);
+
+  // Disable the Generate Prompt button again after clearing the form
+  document.querySelector(`#${stepId} .generate-prompt`).disabled = true;
+
+  // Clear the generated prompt display area
+  document.getElementById(`prompt-output-${stepId}`).innerText = '';
+}

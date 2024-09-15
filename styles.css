@@ -265,7 +265,7 @@ footer button:hover {
   margin-top: 10px; /* Optional: Add some spacing above the button */
 }
 
-.copy-button {
+.copy-button,  .clear-button {
   background-color: rgb(92 92 92 / 50%); /* Transparent black background */
   color: #FFF;
   padding: 5px 10px;
@@ -280,6 +280,10 @@ footer button:hover {
 
 .copy-button:hover {
   background-color: rgba(0, 255, 81, 0.419);
+}
+
+.clear-button:hover {
+  background-color: rgba(255, 109, 109, 0.419);
 }
 
 .prompt-output-container {
