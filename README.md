@@ -15,7 +15,7 @@ Welcome to the **Changes Protocol**, a people-powered AI-augmented governance to
 
 ## Overview
 
-The **Changes Protocol** is a structured yet flexible framework designed to guide users through self-governance and decision-making. By integrating AI-augmented tools with human-centered principles, the protocol offers a unique way to reflect on governance issues, identify potential improvements, and refine actions for better outcomes.
+The **Changes Protocol** is a structured yet flexible framework designed to guide individuals through self-governance and decision-making. By integrating AI-augmented tools with human-centered principles, the protocol offers a unique way to reflect on governance issues, identify potential improvements, and refine actions for better outcomes.
 
 This prototype is built with a 3-step process that involves selecting governance areas, preparing actionable strategies, and delivering governance outcomes, all while receiving AI-assisted insights tailored to your input.
 
@@ -44,21 +44,21 @@ This prototype is built with a 3-step process that involves selecting governance
 
 ## The Changes Protocol
 
-The **Changes Protocol** is rooted in three essential phases that guide users through a reflective and iterative governance process. These phases are designed to foster continuous reflection, ensuring that governance strategies are both resilient and adaptive.
+The **Changes Protocol** is rooted in three essential phases that guide individuals through a reflective and iterative governance process. These phases are designed to foster continuous reflection, ensuring that governance strategies are both resilient and adaptive.
 
 1. **Choices (Appetizer)**: 
-   - This phase encourages users to evaluate key governance input states such as **Character**, **Intelligence**, **Services**, **Community**, or **Systems**.
-   - Users assess how aligned these input states are with specific principles like **Freedom**, **Inclusion**, and **Diversity** using the **Balance Scale** and **Flavours Compass** tools.
+   - This phase encourages individuals to evaluate key governance input states such as **Character**, **Intelligence**, **Services**, **Community**, or **Systems**.
+   - individuals assess how aligned these input states are with specific principles like **Freedom**, **Inclusion**, and **Diversity** using the **Balance Scale** and **Flavours Compass** tools.
 
 2. **Preparation (Main Course)**: 
-   - Users translate insights from the **Choices** phase into actionable governance practices, focusing on areas that require attention or improvement.
+   - individuals translate insights from the **Choices** phase into actionable governance practices, focusing on areas that require attention or improvement.
    - This step involves formulating strategies and plans to ensure better alignment with the selected principles.
 
 3. **Delivery (Dessert)**: 
-   - This final phase helps users refine governance outcomes, ensuring that they are well-aligned with the selected input states and principles.
+   - This final phase helps individuals refine governance outcomes, ensuring that they are well-aligned with the selected input states and principles.
    - The tool generates an AI-ready prompt that provides governance advice based on the user’s input and strategy.
 
-The **Changes Protocol** is designed to be iterative, meaning users can revisit each phase as needed, refining their governance practices over time.
+The **Changes Protocol** is designed to be iterative, meaning individuals can revisit each phase as needed, refining their governance practices over time.
 
 ---
 
