@@ -17,7 +17,7 @@ Welcome to the **Changes Protocol**, a people-powered AI-augmented governance to
 
 The **Changes Protocol** is a structured yet flexible framework designed to guide individuals through self-governance and decision-making. By integrating AI-augmented tools with human-centered principles, the protocol offers a unique way to reflect on governance issues, identify potential improvements, and refine actions for better outcomes.
 
-This prototype is built with a 3-step process that involves selecting governance areas, preparing actionable strategies, and delivering governance outcomes, all while receiving AI-assisted insights tailored to your input.
+This prototype helps you deploy a 3-step process that involves selecting governance areas, preparing actionable strategies, and delivering governance outcomes, all while receiving Personalized Prompts you can easily Copy and Paste to your favorite AI-assistant for insights tailored to your case.
 
 ---
 
