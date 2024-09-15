@@ -1,3 +1,4 @@
+// Open modal and show overlay
 function openStep(modalId) {
   const modal = document.getElementById(modalId);
   modal.style.display = "block";
@@ -7,10 +8,9 @@ function openStep(modalId) {
   document.querySelector('.modal-overlay').style.display = 'block';
 }
 
+// Close modal and hide overlay
 function closeStep(modalId) {
   document.getElementById(modalId).style.display = "none";
-
-  // Hide the overlay
   document.querySelector('.modal-overlay').style.display = 'none';
 }
 
@@ -32,7 +32,7 @@ function loadSelections() {
   const step2Data = JSON.parse(localStorage.getItem('step2')) || {};
   const step3Data = JSON.parse(localStorage.getItem('step3')) || {};
 
-  // If data exists, populate fields and selections for Step 1
+  // Step 1
   if (step1Data.choice) selectChoice(step1Data.choice);
   if (step1Data.balance) setBalance('step1', step1Data.balance);
   if (step1Data.flavour) setFlavour('step1', step1Data.flavour);
@@ -57,7 +57,6 @@ let selectedFlavour = "";
 // Function to handle governance area selection for Step 1
 function selectChoice(choice) {
   selectedChoice = choice;
-
   checkStepCompletion('step1');
 }
 
@@ -135,12 +134,10 @@ function generatePrompt(stepId) {
 
 // Move to the next step and save progress
 function nextStep(nextModalId) {
-  // Close current modal and open next modal
   const currentModal = document.querySelector('.modal[style*="block"]');
   if (currentModal) closeStep(currentModal.id);
   openStep(nextModalId);
 
-  // Auto-save progress
   const stepId = currentModal ? currentModal.id.replace('-modal', '') : '';
   if (stepId) {
     generatePrompt(stepId);
@@ -152,10 +149,7 @@ function returnToMain() {
   const currentModal = document.querySelector('.modal[style*="block"]');
   if (currentModal) closeStep(currentModal.id);
 
-  // Auto-save the final step
   generatePrompt('step3');
-
-  // Redirect to main page where save/download process can happen
   location.href = "#";
 }
 
@@ -164,10 +158,10 @@ function downloadProcess() {
   const step1Prompt = document.getElementById('prompt-output-step1').innerText || "No prompt for Step 1";
   const step2Prompt = document.getElementById('prompt-output-step2').innerText || "No prompt for Step 2";
   const step3Prompt = document.getElementById('prompt-output-step3').innerText || "No prompt for Step 3";
-  
+
   const preparation = document.getElementById('preparation-input').value || "No preparation provided";
   const delivery = document.getElementById('delivery-input').value || "No delivery input";
-  
+
   const data = `
     Step 1: Choices
     ${step1Prompt}
@@ -192,7 +186,7 @@ function downloadProcess() {
   window.URL.revokeObjectURL(url);
 }
 
-// Add event listeners for Balance Scale and Flavours Compass
+// Event listeners for sliders and flavor selections
 document.getElementById('balance-slider-step1').oninput = function() {
   handleBalanceChange('step1', this.value);
 }
@@ -220,6 +214,7 @@ document.getElementById('flavours-step3').onchange = function() {
 // Load saved data on page load
 window.onload = loadSelections;
 
+// Copy prompt function
 function copyPrompt(promptId) {
   const promptText = document.getElementById(promptId).innerText;
   const tempTextarea = document.createElement('textarea');
@@ -229,7 +224,6 @@ function copyPrompt(promptId) {
   document.execCommand('copy');
   document.body.removeChild(tempTextarea);
 
-  // Show copy success message
   const copySuccess = document.getElementById(`copy-success-${promptId.split('-')[2]}`);
   copySuccess.style.display = 'inline';
   setTimeout(() => {
